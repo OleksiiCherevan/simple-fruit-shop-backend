@@ -1,0 +1,12 @@
+.nav {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-header {
+  margin-bottom: 10px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+}
