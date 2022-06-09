@@ -1,0 +1,57 @@
+.view {
+    width: 90%;
+}
+
+.table {
+    width: 100%;
+}
+
+.table thead {
+    background-color: var(--color-primary);
+}
+
+.table thead tr {
+    border: 1px solid var(--color-primary);
+}
+
+.table thead tr td {
+    border: 1px solid var(--color-primary);
+}
+
+.tr {
+    cursor: pointer;
+    display: flex;
+}
+
+.tr_selected {
+    background-color: var(--color-primary) !important;
+}
+
+tbody .tr:hover {
+    background-color: #f0f0f0;
+}
+
+.tr_selected :hover {
+    /* background-color: red; */
+}
+
+.tr td {
+    border: 1px solid #ddd;
+    word-wrap: break-word;
+}
+
+.td_date {
+    width: 15%;
+}
+
+.td_address {
+    width: 15%;
+}
+
+.td_transport {
+    width: 20%;
+}
+
+.td_driver {
+    width: 20%;
+}

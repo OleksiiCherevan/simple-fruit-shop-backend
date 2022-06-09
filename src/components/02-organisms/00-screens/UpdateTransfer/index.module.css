@@ -1,0 +1,25 @@
+.view {
+    width: 90%;
+
+    display: flex;
+    gap: calc(10px + 1%);
+}
+
+.left-side {
+
+}
+
+.fields {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+
+    width: 200px;
+    height: min-content;
+}
+
+.fields span {
+    display: flex;
+    flex-direction: column;
+}
