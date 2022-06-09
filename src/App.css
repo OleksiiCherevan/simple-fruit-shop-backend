@@ -4,33 +4,29 @@
   margin: 0;
 }
 
+a{
+  text-decoration: none;
+}
+
 .app {
-  background-color: #f0f0f0;
   height: 100vh;
 
-  display: flex;
-}
-
-.header {
-  padding-top: 14px;
-  padding-left: 20px;
-  
-  height: 100%;
-  width: 200px;
-  background-color: #fff;
-}
-
-.sub-header {
-  padding-bottom: 20px;
+  background-color: var(--color-back-primary);
 }
 
 .container {
-  width: calc(100%);
+}
+
+.header {
+  height: 64px;
+  padding: 0 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: var(--color-back-additional);
 }
 
 .main {
-  padding-top: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-  
 }

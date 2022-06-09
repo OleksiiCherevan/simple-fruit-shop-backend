@@ -1,6 +1,6 @@
 import style from "./index.module.css";
 import React from "react";
-import ButtonNavVertical from "components/00-atoms/00-buttons/ButtonNavVertical";
+import ButtonNavVertical from "components/00-atoms/01-buttons/ButtonNavVertical";
 
 const NavVertical = (props) => {
     const { text, navs = [], onChange=()=>{} } = props;
