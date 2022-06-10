@@ -2,6 +2,7 @@ import style from "./index.module.css";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchTransfers } from "store/transferSlice";
+import { formatDate } from "assets/date_utils";
 
 const TableViewTransfers = (props) => {
     const { children, onIndexChange = () => {} } = props;
@@ -45,10 +46,10 @@ const TableViewTransfers = (props) => {
                             onClick={() => handleClick(_index)}
                         >
                             <td className={style["td_date"]}>
-                                {transfer.dateStart}
+                                {formatDate(transfer.dateStart)}
                             </td>
                             <td className={style["td_date"]}>
-                                {transfer.dateStop}
+                                {formatDate(transfer.dateStop)}
                             </td>
                             <td className={style["td_address"]}>
                                 {transfer.addressFrom}

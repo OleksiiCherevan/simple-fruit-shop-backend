@@ -4,7 +4,7 @@ import ButtonNavHorizontal from "components/00-atoms/01-buttons/ButtonNavHorizon
 import { Link } from "react-router-dom";
 
 const NavHorizontal = (props) => {
-    const { text, navs = [], onChange = () => {}} = props;
+    const { text, navs = [], onChange = () => {} } = props;
 
     const handleChange = (text) => {
         onChange(text);
@@ -14,9 +14,8 @@ const NavHorizontal = (props) => {
             <div className={style["nav-header"]}>{text}</div>
             <nav className={style["nav"]}>
                 {navs.map((nav) => (
-                    <Link to={nav.href}>
+                    <Link to={nav.href} key={nav.text}>
                         <ButtonNavHorizontal
-                            key={nav.text}
                             onClick={handleChange}
                             {...nav}
                         ></ButtonNavHorizontal>

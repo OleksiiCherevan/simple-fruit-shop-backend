@@ -1,5 +1,13 @@
-export const formatDate = (nanoSeconds) => {
-    const date = new Date(nanoSeconds);
+export const formatDate = (time) => {
+    if (!time) {
+        return;
+    }
+
+    if (typeof time === "string") {
+        return time.split("T")[0];
+    }
+
+    const date = new Date(time);
 
     let year = date.getFullYear();
     let month = date.getMonth();

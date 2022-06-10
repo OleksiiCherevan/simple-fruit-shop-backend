@@ -21,7 +21,9 @@ const fetchTransfers = createAsyncThunk(
 const createTransfer = createAsyncThunk(
     "transfers/createTransfer",
     async (transfer) => {
+        console.log("create transfer thunk");
         await fetchCreateTransfer(transfer);
+        
         const response = await fetchAllTransfers();
 
         const data = await response.json().then((data) => data);

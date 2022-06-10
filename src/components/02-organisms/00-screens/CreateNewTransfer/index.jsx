@@ -2,34 +2,39 @@ import style from "./index.module.css";
 import React, { useEffect, useState } from "react";
 import TableViewTransfers from "../../01-blocks/TableViewTransfers";
 
-import { updateTransfer, fetchTransfers, addNewTransfer, createTransfer } from "store/transferSlice";
+import {
+    updateTransfer,
+    fetchTransfers,
+    addNewTransfer,
+    createTransfer,
+} from "store/transferSlice";
 import { useDispatch } from "react-redux";
 const CreateNewTransfer = (props) => {
     const dispatch = useDispatch();
 
     const [addressFrom, setAddressFrom] = useState("");
     const [addressTo, setAddressTo] = useState("");
-    const [driver, setDriver] = useState("");
-    const [transport, setTransport] = useState("");
+    const [driver, setDriver] = useState({});
+    const [transport, setTransport] = useState({});
 
     const setFieldsFromTransfer = (transfer) => {
-        const {addressFrom, addressTo, driver, transport} = transfer;
-      
+        const { addressFrom, addressTo, driver, transport } = transfer;
+
         setAddressFrom(addressFrom);
         setAddressTo(addressTo);
-        setDriver(driver._id);
-        setTransport(transport._id);
-    }
+        setDriver(driver);
+        setTransport(transport);
+    };
 
     const handleCreate = (e) => {
         const newTransfer = {
             addressFrom,
             addressTo,
-            driver,
-            transport,
+            driver: driver,
+            transport: transport,
         };
 
-        dispatch(createTransfer({transfer: newTransfer}));
+        dispatch(createTransfer(newTransfer));
     };
 
     return (
@@ -58,7 +63,7 @@ const CreateNewTransfer = (props) => {
                     <input
                         id="driver"
                         type="text"
-                        value={driver}
+                        value={driver._id}
                         onChange={(e) => setDriver(e.target.value)}
                     ></input>
                 </span>
@@ -67,14 +72,16 @@ const CreateNewTransfer = (props) => {
                     <input
                         id="transport"
                         type="text"
-                        value={transport}
+                        value={transport._id}
                         onChange={(e) => setTransport(e.target.value)}
                     ></input>
                 </span>
                 <button onClick={handleCreate}>Add new transfer</button>
             </div>
 
-            <TableViewTransfers onIndexChange={(data) => setFieldsFromTransfer(data)}></TableViewTransfers>
+            <TableViewTransfers
+                onIndexChange={(data) => setFieldsFromTransfer(data)}
+            ></TableViewTransfers>
         </div>
     );
 };

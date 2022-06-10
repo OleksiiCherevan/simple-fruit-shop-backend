@@ -16,8 +16,8 @@ const UpdateTransfer = (props) => {
 
     const [addressFrom, setAddressFrom] = useState("");
     const [addressTo, setAddressTo] = useState("");
-    const [driver, setDriver] = useState("");
-    const [transport, setTransport] = useState("");
+    const [driver, setDriver] = useState({});
+    const [transport, setTransport] = useState({});
 
     const setFields = (transfer) => {
         const { addressFrom, addressTo, driver, transport } = transfer;
@@ -26,8 +26,8 @@ const UpdateTransfer = (props) => {
 
         setAddressFrom(addressFrom);
         setAddressTo(addressTo);
-        setDriver(driver._id);
-        setTransport(transport._id);
+        setDriver(driver);
+        setTransport(transport);
     };
 
     const handleChange = (transfer) => {
@@ -96,7 +96,7 @@ const UpdateTransfer = (props) => {
                     <input
                         id="driver"
                         type="text"
-                        value={driver}
+                        value={driver._id}
                         onChange={(e) => setDriver(e.target.value)}
                     ></input>
                 </span>
@@ -105,7 +105,7 @@ const UpdateTransfer = (props) => {
                     <input
                         id="transport"
                         type="text"
-                        value={transport}
+                        value={transport._id}
                         onChange={(e) => setTransport(e.target.value)}
                     ></input>
                 </span>

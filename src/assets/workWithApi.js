@@ -15,13 +15,14 @@ export const fetchUpdateTransfer = async (id, transfer) =>
 
 export const fetchCreateTransfer = async (transfer) => {
     transfer.driver = transfer.driver._id;
-    transfer.driver = transfer.driver._id;
+    transfer.transport = transfer.transport._id;
+
     await fetch("http://localhost:3000/api/transfer", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(transfer), // body data type must match "Content-Type" header
+        body: JSON.stringify({transfer}), // body data type must match "Content-Type" header
     }).then((response) => {
         return response;
     });
